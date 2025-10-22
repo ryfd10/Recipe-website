@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color:blue">
+{% for r in recipe %}
+<h1>
+    {{r.name}}
+</h1>
+
+<br>
+<img src="{{r.image.url}}" style=" height:200px">
+<br>
+{% endfor %}
+
+<a href="{% url 'recipesList' %}"> recipe list</a>
+
+</body>
+</html>

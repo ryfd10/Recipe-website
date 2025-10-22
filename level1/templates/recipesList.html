@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>recipe</title>
+</head>
+<body style="background-color:lightblue">
+{%for r in recipe%}
+  <li>{{r.name}} {{r.level}}  {{Time_of_preparing}}</li>
+        <a href="{%url 'recipeDetails' r.slug%}">more deatailes</a>
+
+{%endfor%}
+<!--<h3>'count:'{{count}}</h3>-->
+<br>
+<a href="{% url 'recipesForm' %}" name="recipee"> <h3>add a recipe</h3></a>
+         <a href="{% url 'authorForm' %}" name="authorr"> <h3>add a author</h3></a>
+<!--<h3>'the avarge is:'{{avg}}</h3>-->
+
+
+
+<form action="{%url 'byName' %}" method="GET">
+    <input type="text" name="name" placeholder="enter value to search" >
+<input type="submit" value="submit">
+</form>
+
+<br>
+</body>
+</html>
